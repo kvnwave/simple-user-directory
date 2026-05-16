@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTask } from './features/taskSlice';
 
 function App() {
-  const [input, setInput] = useState('');
   const [users, setUsers] = useState([]);
-  const [error, setError] = useState('');
-
-  const dispatch = useDispatch();
-  const tasks = useSelector((state) => state.tasks.taskList);
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
